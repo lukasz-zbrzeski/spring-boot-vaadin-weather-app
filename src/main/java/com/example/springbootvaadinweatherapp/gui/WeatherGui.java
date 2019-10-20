@@ -3,6 +3,7 @@ package com.example.springbootvaadinweatherapp.gui;
 import com.example.springbootvaadinweatherapp.model.WeatherApi;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -14,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 @Route("weather")
+@StyleSheet("/style.css")
 public class WeatherGui extends VerticalLayout {
     private String city;
 
