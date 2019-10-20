@@ -3,6 +3,7 @@ package com.example.springbootvaadinweatherapp.gui;
 import com.example.springbootvaadinweatherapp.model.WeatherApi;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -33,6 +34,7 @@ public class WeatherGui extends VerticalLayout {
         Button buttonCheckWeather = new Button("Check weather!");
 
         Label labelCityAndCountry = new Label();
+        Image weatherIcon = new Image();
         Label labelTemperature = new Label();
         Label labelPressure = new Label();
         Label labelWind = new Label();
@@ -46,6 +48,7 @@ public class WeatherGui extends VerticalLayout {
             this.city = textFieldSetCity.getValue();
 
             labelCityAndCountry.setText(connectToApi().getBody().getName() + ", " + connectToApi().getBody().getSys().getCountry());
+            weatherIcon.setSrc("http://openweathermap.org/img/wn/" + connectToApi().getBody().getWeather().get(0).getIcon() + "@2x.png");
             labelTemperature.setText("Temperature: " + connectToApi().getBody().getMain().getTemp().intValue() + "°C");
             labelPressure.setText("Pressure: " + connectToApi().getBody().getMain().getPressure() + " hPa");
             labelWind.setText("Wind:");
@@ -64,6 +67,7 @@ public class WeatherGui extends VerticalLayout {
                 textFieldSetCity,
                 buttonCheckWeather,
                 labelCityAndCountry,
+                weatherIcon,
                 labelTemperature,
                 labelPressure,
                 labelWind,
