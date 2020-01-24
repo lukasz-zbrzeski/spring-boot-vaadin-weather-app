@@ -1,3 +1,13 @@
 body {
-    background-color: #aaafae;
+    background-color: #1E0960;
+    color: #FFFFFF;
+}
+
+.textFieldSetCity {
+    color: #FFFFFF;
+}
+
+.buttonCheckWeather {
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
 }

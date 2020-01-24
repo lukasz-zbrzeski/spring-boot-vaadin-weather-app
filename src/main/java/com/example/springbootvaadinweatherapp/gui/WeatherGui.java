@@ -46,6 +46,11 @@ public class WeatherGui extends VerticalLayout {
         Label labelLocationLongitude = new Label();
         Label labelLocationLatitude = new Label();
 
+        buttonCheckWeather.addClickShortcut(Key.ENTER);
+
+        textFieldSetCity.getClassNames().add("textFieldSetCity");
+        buttonCheckWeather.getClassNames().add("buttonCheckWeather");
+
         buttonCheckWeather.addClickListener(clickEvent -> {
             this.city = textFieldSetCity.getValue();
 
@@ -62,8 +67,6 @@ public class WeatherGui extends VerticalLayout {
 
             textFieldSetCity.setValue("");
         });
-
-        buttonCheckWeather.addClickShortcut(Key.ENTER);
 
         add(
                 textFieldSetCity,
