@@ -1,13 +1,16 @@
 body {
     background-color: #1E0960;
-    color: #FFFFFF;
-}
-
-.textFieldSetCity {
-    color: #FFFFFF;
 }
 
 .buttonCheckWeather {
-    color: #FFFFFF;
+    color: #2DE1C2;
     border: 1px solid #FFFFFF;
+}
+
+.labelCityAndCountry, .labelWind, .labelLocation {
+    color: #2DE1C2;
+}
+
+.labelTemperature, .labelPressure, .labelWindSpeed, .labelWindDegrees, .labelLocationLongitude, .labelLocationLatitude {
+    color: #FFFFFF;
 }

@@ -3,6 +3,7 @@ package com.example.springbootvaadinweatherapp.gui;
 import com.example.springbootvaadinweatherapp.model.WeatherApi;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
@@ -16,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Route("weather")
 @StyleSheet("/style.css")
+@HtmlImport("/style.html")
 public class WeatherGui extends VerticalLayout {
     private String city;
 
@@ -50,6 +52,16 @@ public class WeatherGui extends VerticalLayout {
 
         textFieldSetCity.getClassNames().add("textFieldSetCity");
         buttonCheckWeather.getClassNames().add("buttonCheckWeather");
+
+        labelCityAndCountry.getClassNames().add("labelCityAndCountry");
+        labelTemperature.getClassNames().add("labelTemperature");
+        labelPressure.getClassNames().add("labelPressure");
+        labelWind.getClassNames().add("labelWind");
+        labelWindSpeed.getClassNames().add("labelWindSpeed");
+        labelWindDegrees.getClassNames().add("labelWindDegrees");
+        labelLocation.getClassNames().add("labelLocation");
+        labelLocationLongitude.getClassNames().add("labelLocationLongitude");
+        labelLocationLatitude.getClassNames().add("labelLocationLatitude");
 
         buttonCheckWeather.addClickListener(clickEvent -> {
             this.city = textFieldSetCity.getValue();
