@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i&display=swap&subset=latin-ext');
+
 body {
     background-color: #1E0960;
+}
+
+body, .buttonCheckWeather {
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .buttonCheckWeather {
