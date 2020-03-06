@@ -20,11 +20,13 @@ import org.springframework.web.client.RestTemplate;
 @HtmlImport("/style.html")
 public class WeatherGui extends VerticalLayout {
     private String city;
+    private String units = "metric";
+    private final String apiKey = "9f1c9d5001a81c74d30f19a75218c891";
 
     private ResponseEntity<WeatherApi> connectToApi() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<WeatherApi> exchange = restTemplate.exchange(
-                "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=9f1c9d5001a81c74d30f19a75218c891",
+                "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=" + units + "&APPID=" + apiKey,
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 com.example.springbootvaadinweatherapp.model.WeatherApi.class
